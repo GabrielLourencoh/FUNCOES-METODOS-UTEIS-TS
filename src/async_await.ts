@@ -67,3 +67,41 @@ buscarDados();
 // async	Declara que a função retorna uma Promise automaticamente
 // await	Pausa a execução até que a Promise seja resolvida ou rejeitada
 // fetch()	Função nativa usada para fazer requisições HTTP e retorna uma Promise com a resposta
+
+
+
+// MAIS SOBRE ASYNC AWAIT
+// O que faz: permite trabalhar com Promises de forma mais legível.
+// Quando usar: quando precisa esperar uma função assíncrona terminar.
+// Estrutura:
+// async function nomeFuncao() {
+//     const resultado = await algumaPromise();
+// }
+
+const pegarDados = async () => {
+    const resposta = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const dados = await resposta.json();
+    console.log(dados);
+}
+
+pegarDados();
+
+
+// PROMISE.ALL
+// O que faz: executa várias Promises em paralelo e aguarda todas terminarem.
+// Quando usar: quando você quer otimizar várias requisições assíncronas ao mesmo tempo.
+// Estrutura:
+// const resultados = await Promise.all([promise1, promise2]);
+
+const urls = [
+    'https://jsonplaceholder.typicode.com/posts/1',
+    'https://jsonplaceholder.typicode.com/posts/2'
+];
+
+const pegaTudo = async () => {
+    const respostas = await Promise.all(urls.map((url) => fetch(url)));
+    const dados = await Promise.all(respostas.map((res) => res.json()));
+    console.log(dados);
+}
+
+pegaTudo();
