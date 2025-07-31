@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Empresa = void 0;
 class Empresa {
     constructor(nome, cnpf, senha, descricao) {
-        // Por padrão, quando não definimos o modificador de acesso do atributo/método, ele é PÚBLICO! Podendo ser alterado e lido a qualquer momento
+        // Por padrão, quando não definimos o modificador de acesso do atributo/método, ele é PÚBLICO! 
+        // Podendo ser alterado e lido a qualquer momento
         this.nome = 'Empresa';
         // Protegido é acessível apenas dentro da própria classe ou subclasses
         this.cnpj = '12123123123';

@@ -1,5 +1,6 @@
 export class Empresa {
-    // Por padrão, quando não definimos o modificador de acesso do atributo/método, ele é PÚBLICO! Podendo ser alterado e lido a qualquer momento
+    // Por padrão, quando não definimos o modificador de acesso do atributo/método, ele é PÚBLICO! 
+    // Podendo ser alterado e lido a qualquer momento
     nome: string = 'Empresa';
 
     // Protegido é acessível apenas dentro da própria classe ou subclasses
