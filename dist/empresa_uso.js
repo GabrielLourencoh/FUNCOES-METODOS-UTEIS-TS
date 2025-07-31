@@ -3,6 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const empresa_1 = require("./empresa");
 const e = new empresa_1.Empresa("Empresa", "123123123123", "senha", "Descricao");
 console.log(`Informações da Empresa: `, e.info());
+// Inválido! 'nomeClasse' é um atributo estático, só pode ser acessado diretamente pela classe
+// e.nomeClasse();
+// Dessa forma:
+const nomeClasse = empresa_1.Empresa.nomeClasse;
+console.log(nomeClasse);
 // O atributo nome pode ser alterado porque é um atributo público
 // e.nome= "Empresa foi alterada";
 // Isso não é possivel porque o atributo "cnpj" é protegido, só podendo ser modificado dentro da própria classe
